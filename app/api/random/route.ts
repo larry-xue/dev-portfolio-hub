@@ -1,5 +1,7 @@
 export async function GET() {
-  const response = await fetch(`https://developer-portfolio-api.larryxue.dev/random`);
+  const response = await fetch(
+    `https://developer-portfolio-api.larryxue.dev/random`,
+  );
   const data = await response.json();
 
   return new Response(JSON.stringify(data?.results || []), {
@@ -9,4 +11,4 @@ export async function GET() {
   });
 }
 
-export const fetchCache = "force-no-store"
+export const fetchCache = "force-no-store";

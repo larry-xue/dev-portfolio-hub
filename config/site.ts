@@ -2,16 +2,17 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Dev Portfolio Hub",
-  description: "Discover an amazing collection of developer portfolios. Get inspired by these exceptional sites!",
+  description:
+    "Discover an amazing collection of developer portfolios. Get inspired by these exceptional sites!",
   navItems: [
     {
-      label: 'List',
-      href: "/list"
+      label: "List",
+      href: "/list",
     },
     {
-      label: 'About',
-      href: "/about"
-    }
+      label: "About",
+      href: "/about",
+    },
   ],
   navMenuItems: [
     {

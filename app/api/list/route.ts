@@ -10,12 +10,3 @@ export async function GET() {
 }
 
 export const revalidate = 3600;
-
-export const getList = async (): Promise<{
-  name: string;
-  href: string;
-}[]> => {
-  const response = await fetch(`https://developer-portfolio-api.larryxue.dev/`);
-  const data = await response.json();
-  return data?.results || [];
-}
