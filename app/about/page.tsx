@@ -66,6 +66,11 @@ export default function AboutPage() {
         </li>
         <li>
           <Checkbox color="success">
+            Fix highlighting issues with fuzzy search
+          </Checkbox>
+        </li>
+        <li>
+          <Checkbox color="success">
             Categorization System (coming soon!)
           </Checkbox>
         </li>

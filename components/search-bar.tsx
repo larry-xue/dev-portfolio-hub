@@ -30,6 +30,10 @@ const SearchResults = ({
   return (
     <div className="flex gap-2 w-full flex-wrap mt-10 justify-center">
       {data.results.map((item, idx) => {
+        const splitList = String(item.name.toLowerCase())
+          .split(String(highlight).toLowerCase())
+          .filter((t) => !!t);
+
         return (
           <Link
             key={item.href}
@@ -39,14 +43,18 @@ const SearchResults = ({
             isDisabled={item.href === "#"}
             target="_blank"
           >
-            {item.name.split(highlight).map((word, idx2) => {
-              return (
-                <span key={`${idx}_${word}_${idx2}`} className="text-sm">
-                  {word}
-                  <span className="text-secondary">{highlight}</span>
-                </span>
-              );
-            })}
+            {splitList.length > 1
+              ? splitList.map((word, idx2) => {
+                  return (
+                    <span key={`${idx}_${word}_${idx2}`} className="text-sm">
+                      {word}
+                      {idx2 !== splitList.length - 1 && (
+                        <span className="text-secondary">{highlight}</span>
+                      )}
+                    </span>
+                  );
+                })
+              : item.name}
           </Link>
         );
       })}
@@ -88,7 +96,7 @@ export default function SearchBar() {
       if (data.results.length) {
         setHighlight(_input);
       } else {
-        setHighlight("");
+        setHighlight("0.0");
       }
     } catch (err) {
       setHighlight("");
