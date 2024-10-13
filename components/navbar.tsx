@@ -70,7 +70,7 @@ export const Navbar = () => {
               <Link
                 color={
                   index === 2
-                    ? "primary"
+                    ? "success"
                     : index === siteConfig.navMenuItems.length - 1
                       ? "danger"
                       : "foreground"
