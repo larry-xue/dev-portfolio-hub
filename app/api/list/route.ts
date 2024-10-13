@@ -10,3 +10,4 @@ export async function GET() {
 }
 
 export const revalidate = 3600;
+export const runtime = "edge";
