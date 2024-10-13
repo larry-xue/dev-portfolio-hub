@@ -41,13 +41,14 @@ export default function List() {
   }, []);
 
   if (loading) {
-    return <div className="flex items-center justify-center mt-40">
-      <div className="flex flex-col items-center justify-center space-y-4">
-
-        <div className="spinner-border animate-spin h-8 w-8 border-4 border-t-green-500 rounded-full"></div>
-        <p className="text-gray-700 font-medium">Loading...</p>
+    return (
+      <div className="flex items-center justify-center mt-40">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="spinner-border animate-spin h-8 w-8 border-4 border-t-green-500 rounded-full" />
+          <p className="text-gray-700 font-medium">Loading...</p>
+        </div>
       </div>
-    </div>
+    );
   }
 
   return (
